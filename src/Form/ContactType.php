@@ -15,7 +15,7 @@ class ContactType extends AbstractType
         $builder
             ->add('email')
             ->add('contenu', TextareaType::class, [
-                'attr' => ['class' => 'tinymce']
+                'attr' => array('style' => 'height: 300px')
             ]);
     }
 

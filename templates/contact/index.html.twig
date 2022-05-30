@@ -1,13 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block body %}
 
-{{ form_start(form) }}
-{{ form_row(form.email,{'label': 'Email', 'attr': {'placeholder' : 'Adresse Mail ...'}})}}
-{{ form_row(form.contenu,{'label': 'Message', 'attr': {'placeholder' : 'Votre Message ...'}})}}
-<button type="submit" class="btn btn_success">Souscrire</button>
-{{ form_end(form) }}
+    <div class="flex flex-col justify-center items-center bg-white">
+
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                    Email
+                </label>
+                {{ form_row(form.email,{'label': ' ', 'attr': {'placeholder' : 'Adresse Mail ...'}})}}
+            </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                    Message
+                </label>
+                {{ form_row(form.contenu,{'label': ' ', 'attr': {'placeholder' : 'Votre Message ...'}})}}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
 
 {% endblock %}
