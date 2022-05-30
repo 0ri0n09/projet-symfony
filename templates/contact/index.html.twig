@@ -4,11 +4,21 @@
 
 {% block body %}
 
+    {{ form_start(form) }}
+
     <div class="flex flex-col justify-center items-center bg-white">
 
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <label class="block  tracking-wide text-3xl font-bold mb-2 font-['Roboto-Light'] font-thin text-lime-700">
+                    Contact
+                </label>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+                <label class="block tracking-wide text-2xs mb-2 font-['Roboto-Light'] font-thin text-lime-700">
                     Email
                 </label>
                 {{ form_row(form.email,{'label': ' ', 'attr': {'placeholder' : 'Adresse Mail ...'}})}}
@@ -17,12 +27,20 @@
 
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <label class="block tracking-wide text-2xs mb-2 font-thin text-lime-700">
                     Message
                 </label>
                 {{ form_row(form.contenu,{'label': ' ', 'attr': {'placeholder' : 'Votre Message ...'}})}}
             </div>
         </div>
+
+        <div class="flex fel-wrap justify-center px-3">
+            <button id="validateUser" class="bg-[#84947B] text-white font-bold py-2 px-4 font-thin">
+                Envoyer
+            </button>
+        </div>
+        <br>
+
         {{ form_end(form) }}
     </div>
 
