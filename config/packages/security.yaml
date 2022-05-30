@@ -8,7 +8,8 @@ security:
         users_in_memory: { memory: null }
         in_database :
             entity:
-                class: App\Entity\User
+                class: App\Entity\Users
+                property: email
 
     firewalls:
         dev:
@@ -16,7 +17,10 @@ security:
             security: false
         main:
             lazy: true
-            provider: users_in_memory
+            provider: in_database
+            form_login:
+                login_path: app_login
+                check_path: app_login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
