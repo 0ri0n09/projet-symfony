@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin/Contact{% endblock %}
+
+{% block body %}
+
+<a href="{{path('app_admin')}}">Retour</a>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Id</th>
+            <th colspan="2">Email</th>
+            <th colspan="2">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.contenu }}</td>
+        </tr>
+		{% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

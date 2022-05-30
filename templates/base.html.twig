@@ -23,6 +23,12 @@
             <a class="uppercase text-lime-700 text-2xs font-thin" href={{ path('app_liste_article') }}>Recettes</a>
             <a class="uppercase text-lime-700 text-2xs font-thin" href={{ path('app_about') }}>A propos</a>
             <a class="uppercase text-lime-700 text-2xs font-thin" href="{{ path('app_contact') }}">Contact</a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="uppercase text-lime-700 text-2xs font-thin" href={{ path('app_admin') }}>Administration</a>
+            {% else %}
+            {% endif %}
+
+            
 
             {% if is_granted('ROLE_USER') %}
                 <a class="uppercase text-lime-700 text-2xs font-thin" href="{{ path('app_logout') }}">Déconnexion</a>

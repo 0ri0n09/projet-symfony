@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<a href="{{path('app_create_article')}}">Ajouter un article</a>
+<a href="{{path('app_admin_contact')}}">Contact</a>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Id</th>
+            <th colspan="2">Titre</th>
+            <th colspan="2">Catégorie</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+        <tr>
+            <td>{{ article.id }}</td>
+            <td>{{ article.titre }}</td>
+            <td>{{ article.category }}</td>
+            <td>
+                <a href="">Modifier</a>
+                <a href="">Supprimer</a>
+            </td>
+        </tr>
+		{% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
