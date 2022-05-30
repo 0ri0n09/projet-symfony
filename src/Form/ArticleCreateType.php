@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Article;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -14,7 +15,9 @@ class ArticleCreateType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('contenu')
+            ->add('contenu', TextareaType::class, [
+                'attr' => array('style' => 'height: 300px')
+            ])
             ->add('image', ChoiceType::class, [
                 'choices'  => [
                     'aperitif-1' => 'aperitif-1',
