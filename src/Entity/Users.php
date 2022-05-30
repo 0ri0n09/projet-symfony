@@ -6,9 +6,11 @@ use App\Repository\UsersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
-class Users
+class Users implements UserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -28,6 +30,7 @@ class Users
     private $email;
 
     #[ORM\Column(type: 'string', length: 255)]
+
     private $password;
 
     #[ORM\Column(type: 'date')]
@@ -195,5 +198,15 @@ class Users
         }
 
         return $this;
+    }
+
+    public function eraseCredentials() {   }
+
+    public function getUserIdentifier(): string { 
+        return $this->email; 
+    }
+    
+    public function getRoles(): array {
+        return ['ROLE_USER'];
     }
 }

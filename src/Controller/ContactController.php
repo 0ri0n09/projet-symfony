@@ -27,6 +27,8 @@ class ContactController extends AbstractController
             $manager = $doctrine->getManager();
             $manager->persist($contact);
             $manager->flush();
+
+            return $this->redirectToRoute('');
         }
 
         return $this->render('contact/index.html.twig', [
