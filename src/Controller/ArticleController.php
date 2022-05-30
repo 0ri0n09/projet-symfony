@@ -18,19 +18,18 @@ class ArticleController extends AbstractController
     {
         $article = $articleRepository->FindAll();
 
-
         return $this->render('article/list.html.twig', [
             "article" => $article,
             'controller_name' => 'ListeArticleController',
         ]);
     }
 
-    #[Route('/{id}', name: 'acteur_detail')]
+    #[Route('/{id}', name: 'app_article_detail')]
     public function acteurDetail($id, ArticleRepository $articleRepository, CommentaireRepository $commentaireRepository)
     {
         $article = $articleRepository->find($id);
 
-        $commentaires = $commentaireRepository->findBy(array("id_article" => $id));
+        $commentaires = $commentaireRepository->findBy(array("id_article" => $article));
 
         $commentaire = new Commentaire();
 

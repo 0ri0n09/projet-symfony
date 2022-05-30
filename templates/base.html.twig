@@ -19,10 +19,10 @@
 
     <nav class="relative w-full py-3 bg-gray-100 text-gray-500 hover:text-gray-700 focus:text-gray-700">
         <div class="container-fluid flex justify-around items-center border-b-2 border-gray-100">
-            {#<a class="uppercase text-lime-700 text-2xs font-thin" href="{{ path('app_home') }}">Accueil</a>
-            <a class="uppercase text-lime-700 text-2xs font-thin" href={{ path('app_recettes') }}>Recettes</a>
+            <a class="uppercase text-lime-700 text-2xs font-thin" href="{{ path('app_home') }}">Accueil</a>
+            <a class="uppercase text-lime-700 text-2xs font-thin" href={{ path('app_liste_article') }}>Recettes</a>
             <a class="uppercase text-lime-700 text-2xs font-thin" href={{ path('app_about') }}>A propos</a>
-            #}<a class="uppercase text-lime-700 text-2xs font-thin" href="{{ path('app_contact') }}">Contact</a>
+            <a class="uppercase text-lime-700 text-2xs font-thin" href="{{ path('app_contact') }}">Contact</a>
 
             {% if is_granted('ROLE_USER') %}
                 <a class="uppercase text-lime-700 text-2xs font-thin" href="{{ path('app_logout') }}">Déconnexion</a>
