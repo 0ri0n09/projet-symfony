@@ -33,6 +33,14 @@ class ArticleCreateType extends AbstractType
                     'sushis' => 'sushis',
                 ],
             ])
+            ->add('category', ChoiceType::class, [
+                'choices' => [
+                    'entree' => 'entree',
+                    'plat' => 'plat',
+                    'dessert' => 'dessert',
+                    'aperitif' => 'aperitif',
+                ]
+            ])
         ;
     }
 

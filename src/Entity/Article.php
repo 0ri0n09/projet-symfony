@@ -34,6 +34,9 @@ class Article
     #[ORM\OneToMany(mappedBy: 'id_article', targetEntity: Commentaire::class)]
     private $commentaires;
 
+    #[ORM\Column(type: 'string', length: 40)]
+    private $category;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
@@ -130,6 +133,18 @@ class Article
                 $commentaire->setIdArticle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
