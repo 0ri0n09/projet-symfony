@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+
+{{ form_start(form) }}
+{{ form_row(form.email,{'label': 'Email', 'attr': {'placeholder' : 'Adresse Mail ...'}})}}
+{{ form_row(form.contenu,{'label': 'Message', 'attr': {'placeholder' : 'Votre Message ...'}})}}
+<button type="submit" class="btn btn_success">Souscrire</button>
+{{ form_end(form) }}
+
+{% endblock %}
