@@ -209,6 +209,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     public function getRoles(): array {
+        if($this->getRole() == "Admin") {
+            return ['ROLE_ADMIN', 'ROLE_USER'];
+        }
         return ['ROLE_USER'];
     }
 }

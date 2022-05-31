@@ -24,9 +24,9 @@
                                     <h1 class="font-medium mr-2">{{ article.titre }}</h1>
                                     <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{ article.contenu}}</p>
 
-                                    {#<a href="{{ path('app_recettes_details', {'id': article.id}) }}">
-                                        <button class="w-full mt-2 bg-button-green py-2 text-white">Voir plus...</button>
-                                    </a>#}
+                                    <a href="{{ path('app_article_detail', {'id': article.id}) }}">
+                                        <button class="w-full mt-2 bg-button-green py-2 text-black">Voir plus...</button>
+                                    </a>
                                     <hr class="my-2">
                                 </div>
                             </div>
