@@ -3,31 +3,41 @@
 {% block title %}Admin{% endblock %}
 
 {% block body %}
-<a href="{{path('app_create_article')}}">Ajouter un article</a>
-<a href="{{path('app_admin_contact')}}">Contact</a>
 
-<table>
-    <thead>
-        <tr>
-            <th colspan="2">Id</th>
-            <th colspan="2">Titre</th>
-            <th colspan="2">Catégorie</th>
-            <th colspan="2">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="flex fel-wrap justify-center px-3">
+<a href="{{path('app_create_article')}}" class="bg-gray-400 text-white font-bold py-2 px-4 font-thin">Ajouter un article</a>
+<a href="{{path('app_admin_contact')}}" class="bg-gray-400 text-white font-bold py-2 px-4 font-thin">Contact</a>
+</div>
+<br>
+<div class="flex flex-col justify-center items-center bg-white">
+    <table class="table-fixed">
+        <thead>
+            <tr class="divide-x-2 divide-y-2">
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Catégorie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for article in articles %}
-        <tr>
-            <td>{{ article.id }}</td>
-            <td>{{ article.titre }}</td>
-            <td>{{ article.category }}</td>
-            <td>
-                <a href="">Modifier</a>
-                <a href="">Supprimer</a>
-            </td>
-        </tr>
-		{% endfor %}
-    </tbody>
-</table>
-
+            <tr class="divide-x-2 divide-y-2">
+                <td>{{ article.id }}</td>
+                <td>{{ article.titre }}</td>
+                <td>{{ article.category }}</td>
+                <td>
+                    <div class="flex fel-wrap justify-center px-3">
+                        <button id="Modifier" class="bg-gray-400 text-white font-bold py-2 px-4 font-thin">
+                            Modifier
+                        </button>
+                        <button id="Supprimer" class="bg-red-400 text-white font-bold py-2 px-4 font-thin">
+                            Supprimer
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

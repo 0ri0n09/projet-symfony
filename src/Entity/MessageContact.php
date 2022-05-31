@@ -16,7 +16,7 @@ class MessageContact
     #[ORM\Column(type: 'string', length: 255)]
     private $email;
 
-    #[ORM\Column(type: 'string', length: 65535)]
+    #[ORM\Column(type: 'text')]
     private $contenu;
 
     #[ORM\Column(type: 'date')]

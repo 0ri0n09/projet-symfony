@@ -4,25 +4,29 @@
 
 {% block body %}
 
-<a href="{{path('app_admin')}}">Retour</a>
-
-<table>
-    <thead>
-        <tr>
-            <th colspan="2">Id</th>
-            <th colspan="2">Email</th>
-            <th colspan="2">Message</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="flex fel-wrap justify-center px-3">
+<a href="{{path('app_admin')}}" class="bg-gray-400 text-white font-bold py-2 px-4 font-thin">Retour</a>
+</div>
+<br>
+<div class="flex flex-col justify-center items-center bg-white">
+    <table class="table-fixed">
+        <thead>
+            <tr class="divide-x-2 divide-y-2">
+                <th>Id</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for contact in contacts %}
-        <tr>
-            <td>{{ contact.id }}</td>
-            <td>{{ contact.email }}</td>
-            <td>{{ contact.contenu }}</td>
-        </tr>
-		{% endfor %}
-    </tbody>
-</table>
+            <tr class="divide-x-2 divide-y-2">
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.contenu }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}

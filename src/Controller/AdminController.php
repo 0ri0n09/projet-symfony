@@ -24,7 +24,7 @@ class AdminController extends AbstractController
     }
 
     #[Route('/delete/{id}', name: 'app_delete')]
-    public function delete(Request $request, ArticleRepository $articleRepository, $id)
+    public function delete(ArticleRepository $articleRepository, $id)
     {
         $articleRepository->remove($articleRepository->find($id));
  
